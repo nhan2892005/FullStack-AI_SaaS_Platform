@@ -59,7 +59,6 @@ const ImageForm = ({
     const [isTransforming, setIsTransforming] = useState(false);
     const [transformationConfig, setTransformationConfig] = useState(config)
     const [isPending, startTransition] = useTransition()
-    const router = useRouter()
 
     const onSelectField = (value: string, onChangeField: (value: string) => void) => {
         const imageSize = aspectRatioOptions[value as AspectRatioKey]
