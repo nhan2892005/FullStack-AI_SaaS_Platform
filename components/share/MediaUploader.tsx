@@ -53,7 +53,7 @@ const MediaUploader = ({
 
   return (
     <CldUploadWidget
-      uploadPreset="phucnhan_aimage"
+      uploadPreset="phucnhan"
       options={{
         multiple: false,
         resourceType: "image",
