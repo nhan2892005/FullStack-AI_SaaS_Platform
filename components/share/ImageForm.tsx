@@ -25,10 +25,13 @@ import { aspectRatioOptions, creditFee, defaultValues, transformationTypes } fro
 import { CustomField } from "./CustomFeild"
 import { useState, useTransition } from "react"
 import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 import { updateCredits } from "@/lib/actions/user.actions"
 import MediaUploader from "./MediaUploader"
 import TransformedImage from "./TransformedImage"
+import { getCldImageUrl } from "next-cloudinary"
+import { set } from "mongoose"
+import { addImage, updateImage } from "@/lib/actions/image.action"
  
 export const formSchema = z.object({
   title: z.string(),
@@ -61,6 +64,7 @@ const ImageForm = ({
     const [isTransforming, setIsTransforming] = useState(false);
     const [transformationConfig, setTransformationConfig] = useState(config)
     const [isPending, startTransition] = useTransition()
+    const router = useRouter()
 
     const onSelectField = (value: string, onChangeField: (value: string) => void) => {
         const imageSize = aspectRatioOptions[value as AspectRatioKey]
@@ -103,7 +107,7 @@ const ImageForm = ({
         )
 
         setnewTransformation(null)
-
+        
         startTransition(async () => {
             await updateCredits(userId, creditFee)
         })
@@ -116,8 +120,69 @@ const ImageForm = ({
     })
  
     // 2. Define a submit handler.
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values)
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        setIsSubmitting(true)
+
+        if (data || image) {
+            const transformationURL = getCldImageUrl({
+                width: image?.width,
+                height: image?.height,
+                src: image?.publicId,
+                ...transformationConfig,
+            })
+
+            const imageData = {
+                title: values.title,
+                publicId: image?.publicId,
+                transformationType: type,
+                width: image?.width,
+                height: image?.height,
+                config: transformationConfig,
+                secureURL: image?.secureURL,
+                transformationURL,
+                aspectRatio: values?.aspectRatioOptions,
+                color: values?.color,
+                prompt: values?.prompt,
+            }
+
+            if (action === 'Add') {
+                try {
+                    const new_image = await addImage({
+                        image: imageData,
+                        userId,
+                        path: '/'
+                    })
+
+                    if (new_image) {
+                        form.reset()
+                        setImage(data)
+                        router.push(`/Transform/${new_image._id}`)
+                    }
+                } catch (error) {
+                    console.error(error)
+                }
+            }
+
+            if (action === 'Update') {
+                try {
+                    const update_image = await updateImage({
+                        image: {
+                            ...imageData,
+                            _id: data._id,
+                        },
+                        userId,
+                        path: `/transformations/${data._id}`
+                    })
+
+                    if (update_image) {
+                        router.push(`/transformations/${update_image._id}`)
+                    }
+                } catch (error) {
+                    console.error(error)
+                }
+            }
+        }
+        setIsSubmitting(false)
     }
 
     return (

@@ -7,6 +7,8 @@ import Image from 'next/image'
 import React from 'react'
 
 const TransformedImage = ({ image, type, title, transformationConfig, isTransforming, setIsTransforming, hasDownload = false }: TransformedImageProps) => {
+  console.log({ image, type, title, transformationConfig, isTransforming, setIsTransforming, hasDownload })
+  
   const downloadHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
 
