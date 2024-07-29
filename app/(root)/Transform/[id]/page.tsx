@@ -8,10 +8,14 @@ import { Button } from "@/components/ui/button";
 import { getImageById } from "@/lib/actions/image.action";
 import { getImageSize } from "@/lib/utils";
 import { DeleteConfirmation } from "@/components/share/DeleteConfirmation";
+import { getUserById } from "@/lib/actions/user.actions";
+import { redirect } from "next/navigation";
 
 const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
   const { userId } = auth();
+  if (!userId) redirect('/sign-in');
 
+  const user = await getUserById(userId);
   const image = await getImageById(id);
 
   return (
@@ -81,7 +85,7 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
           />
         </div>
 
-        {userId === image.author?.clerkId && (
+        {user === image.author && (
           <div className="mt-4 space-y-4">
             <Button asChild type="button" className="submit-button capitalize">
               <Link href={`/transformations/${image._id}/update`}>
