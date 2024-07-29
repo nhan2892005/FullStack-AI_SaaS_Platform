@@ -29,7 +29,11 @@ export const navLinks = [
     route: "/Transform/add/removeBackground",
     icon: "/assets/icons/camera.svg",
   },
-  // Chat gpt
+  {
+    label: "AI Services",
+    route: "/aiservice",
+    icon: "/assets/icons/ai.svg",
+  },
   {
     label: "Profile",
     route: "/profile",

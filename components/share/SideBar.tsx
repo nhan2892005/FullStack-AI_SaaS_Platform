@@ -21,7 +21,7 @@ const SideBar = () => {
             <nav className='sidebar-nav'>
                 <SignedIn>
                     <ul className='sidebar-nav_elements'>
-                        {navLinks.slice(0,6).map((link) => {
+                        {navLinks.slice(0,7).map((link) => {
                             const isActive = pathName === link.route;
 
                             return (
@@ -29,7 +29,7 @@ const SideBar = () => {
                                     isActive ? 'bg-purple-gradient text-white': 'text-gray-500'
                                 }`}>
                                     <Link href={link.route} className='sidebar-link'>
-                                      <Image className={`${isActive && 'brightness-200'}`} src={link.icon} alt='logo' width={24} height={24} />
+                                      <Image className={`${isActive && 'brightness-200'}`} src={link.icon} alt='logo' width={link.label!=='AI Services' ? 24 : 40} height={link.label!=='AI Services' ? 24 : 40} />
                                       {link.label}
                                     </Link>
                                 </li>
@@ -37,7 +37,7 @@ const SideBar = () => {
                         })}
                     </ul>
                     <ul className='sidebar-nav_elements'>
-                        {navLinks.slice(6).map((link) => {
+                        {navLinks.slice(7).map((link) => {
                             const isActive = pathName === link.route;
 
                             return (
