@@ -85,10 +85,10 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
           />
         </div>
 
-        {user === image.author && (
+        {user?._id === image.author?._id && (
           <div className="mt-4 space-y-4">
             <Button asChild type="button" className="submit-button capitalize">
-              <Link href={`/transformations/${image._id}/update`}>
+              <Link href={`/Transform/${image._id}/update`}>
                 Update Image
               </Link>
             </Button>
