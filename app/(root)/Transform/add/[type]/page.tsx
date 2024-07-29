@@ -8,15 +8,11 @@ import React from 'react'
 
 const AddTransformType = async ({ params : { type }}: SearchParamProps) => {
   const { userId } = auth();
-  console.log('userId', userId);
-  console.log(auth());
   const transformType = transformationTypes[type];
 
   if (!userId) redirect('/sign-in');
 
   const user = await getUserById(userId);
-
-  console.log('user', user);
 
   return (
     <>
