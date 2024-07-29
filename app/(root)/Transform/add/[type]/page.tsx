@@ -16,6 +16,8 @@ const AddTransformType = async ({ params : { type }}: SearchParamProps) => {
 
   const user = await getUserById(userId);
 
+  console.log('user', user);
+
   return (
     <>
       <Header title={transformType.title}
