@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
 
-## Getting Started
+  <div>
+    <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white">
+    <img src="https://img.shields.io/badge/-MongoDB-13aa52?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB">
+    <img src="https://shields.io/badge/react-black?logo=react&style=for-the-badge" alt="React">
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white" alt="TypeScript">
+    <img src="https://img.shields.io/badge/tailwindcss-0F172A?&logo=tailwindcss" alt="Tailwind">
+  </div>
 
-First, run the development server:
+  <h3 align="center">An Social Web App Project</h3>
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📋 <a name="table">Table of Contents</a>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. 🤖 [Introduction](#introduction)
+2. 🔋 [Features](#features)
+3. 🤸 [Deployment](#deploy)
+4. 🚀 [Contacts](#contact)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## <a name="introduction">🤖 Introduction</a>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+An AI image SaaS platform that excels in image processing capabilities, integrates a secure payment infrastructure, offers advanced image search functionalities, and supports multiple AI features, including image restoration, recoloring, object removal, generative filling, and background removal. 
 
-## Learn More
+<br>
 
-To learn more about Next.js, take a look at the following resources:
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/user-attachments/assets/a5ea4d9a-4fb0-423b-81b2-b2cb1beac449" alt="home" style="width: 45%; margin-right: 10px;">
+  <img src="https://github.com/user-attachments/assets/704e94f7-3bad-404a-8986-bf0cde04e2ef" alt="details" style="width: 45%;" align="right">
+</div>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<br>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## <a name="features">🔋 Features</a>
 
-## Deploy on Vercel
+👉 **Authentication and Authorization**: Secure user access with registration, login, and route protection.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+👉 **Community Image Showcase**: Explore user transformations with easy navigation using pagination.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+👉 **Advanced Image Search**: Find images by content or objects present inside the image quickly and accurately.
+
+👉 **Image Restoration**: Revive old or damaged images effortlessly.
+
+👉 **Image Recoloring**: Customize images by replacing objects with desired colors easily.
+
+👉 **Image Generative Fill**: Fill in missing areas of images seamlessly.
+
+👉 **Object Removal**: Clean up images by removing unwanted objects with precision.
+
+👉 **Background Removal**: Extract objects from backgrounds with ease.
+
+👉 **Download Transformed Images**: Save and share AI-transformed images conveniently.
+
+👉 **Transformed Image Details**: View details of transformations for each image.
+
+👉 **Transformation Management**: Control over deletion and updates of transformations.
+
+👉 **Credits System**: Earn or purchase credits for image transformations.
+
+👉 **Profile Page**: Access transformed images and credit information personally.
+
+👉 **Credits Purchase**: Securely buy credits via Stripe for uninterrupted use.
+
+👉 **Responsive UI/UX**: A seamless experience across devices with a user-friendly interface.
+
+and many more, including code architecture and reusability.
+
+## <a name="deploy">🤸 Deployment</a>
+
+This site is deployed on Vercel
+
+Visit: https://aiyourimage.vercel.app/
+
+## <a name="contact">🚀 Contacts</a>
+
+[![Github](https://img.shields.io/badge/Github-nhan2892005-Black?logo=github)](https://github.com/nhan2892005)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Phuc_Nhan_Nguyen-blue?logo=linkedin)](https://www.linkedin.com/in/phuc-nhan-nguyen/)
+
+[![Facebook](https://img.shields.io/badge/Facebook-Phúc_Nhân-blue?logo=facebook)](https://www.facebook.com/phucnhancshcmut/)
+
+[![LeetCode](https://img.shields.io/badge/LeetCode-N289-orange?logo=leetcode)](https://leetcode.com/u/N289/)
+
+[![CodinGame](https://img.shields.io/badge/CodinGame-nhan__289-yellow?logo=codingame)](https://www.codingame.com/profile/3f88b771e04c6894b7485decd4291a7e8589985)
+
+[![Email](https://img.shields.io/badge/Email-nhan.nguyen2005phuyen@hcmut.edu.vn-green?logo=gmail)](nhan.nguyen2005phuyen@hcmut.edu.vn)
+
+[![Website](https://img.shields.io/badge/Website-Visit-blue?logo=globe)](https://phucnhan289.great-site.net/1/Ph%C3%BAc-Nh%C3%A2n.html)
+
+<br />
+<br />
